@@ -19,16 +19,14 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python scripts/ci/install
     - name: Install Thundra Python Agent
       uses: thundra-io/thundra-foresight-python-action@action-experiment
       with:
         apikey: ${{ secrets.THUNDRA_APIKEY }}
         project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
-    - name: Install dependencies
-      run: |
-        python scripts/ci/install
-      env:
-        THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.me/v1
     - name: Run tests
       run: |
         python scripts/ci/run-tests
