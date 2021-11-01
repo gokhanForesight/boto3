@@ -15,6 +15,10 @@ import boto3
 
 from tests import mock, unittest
 
+import os
+
+print("Env vars: ", os.environ)
+
 
 class TestBoto3(unittest.TestCase):
     def setUp(self):
