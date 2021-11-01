@@ -67,5 +67,7 @@ if __name__ == "__main__":
 
     cmd = f"{test_runner} {test_args}{test_dirs}"
     print(f"Running {cmd}...")
+    import os
+    print("os env vars: ", os.environ)
     with cd(os.path.join(REPO_ROOT, "tests")):
         run(cmd)
