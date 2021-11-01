@@ -32,3 +32,8 @@ jobs:
         python scripts/ci/run-tests
       env:
         THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.me/v1
+    - name: Run Integration tests
+      run: |
+        python scripts/ci/run-integ-tests
+      env:
+        THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.me/v1
